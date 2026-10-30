@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yaroslav – strony internetowe dla małych firm</title>
+<meta name="description" content="Front-end developer. Proste, szybkie strony internetowe dla małych firm: wizytówki, menu, cenniki, galerie i zapisy online.">
+<!-- Marks the page as JS-enabled before first paint (prevents a flash of hidden content) -->
+<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">Yaroslav<span>.dev</span></a>
+    <div class="top__actions">
+      <div class="lang" role="group" aria-label="Język / Language">
+        <button class="lang__btn" type="button" data-lang="pl" aria-pressed="true">PL</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--small" href="mailto:gysigeim15@gmail.com" data-i18n="nav.contact">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="tag" data-i18n="hero.tag">Front-end developer · Radzymin i okolice</span>
+      <h1 data-i18n="hero.title">Proste, szybkie strony internetowe dla małych firm</h1>
+      <p data-i18n="hero.text">Cześć, jestem Yaroslav. Robię strony wizytówki, menu, cenniki i galerie, które dobrze wyglądają na telefonie i pomagają klientom Cię znaleźć.</p>
+      <a class="btn" href="#projekty" data-i18n="hero.cta">Zobacz projekty</a>
+      <a class="btn btn--ghost" href="https://github.com/Ragna9683" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <section id="oferta">
+    <div class="wrap rv">
+      <h2 data-i18n="offer.title">Co mogę dla Ciebie zrobić</h2>
+      <div class="grid">
+        <div class="card"><h3 data-i18n="offer.1.title">Strona-wizytówka</h3><p data-i18n="offer.1.text">Jedna czytelna strona: kim jesteś, czym się zajmujesz, gdzie Cię znaleźć.</p></div>
+        <div class="card"><h3 data-i18n="offer.2.title">Menu, cennik, oferta</h3><p data-i18n="offer.2.text">Ceny widoczne od razu, bez dopytywania. Łatwe do aktualizacji.</p></div>
+        <div class="card"><h3 data-i18n="offer.3.title">Galeria zdjęć</h3><p data-i18n="offer.3.text">Zdjęcia lokalu, produktów lub prac w estetycznym układzie.</p></div>
+        <div class="card"><h3 data-i18n="offer.4.title">Kontakt i zapisy</h3><p data-i18n="offer.4.text">Telefon, mapa, godziny otwarcia, grafik zajęć lub formularz.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projekty">
+    <div class="wrap rv">
+      <h2 data-i18n="projects.title">Projekty</h2>
+      <div class="projects">
+
+        <article class="project">
+          <div class="thumb thumb--yoga" aria-hidden="true"><span>Yoga</span></div>
+          <div class="project__body">
+            <h3 data-i18n="yoga.title">Strona dla nauczycielki jogi</h3>
+            <p class="chips"><span class="chip chip--accent" data-i18n="yoga.badge">Zlecenie płatne</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></p>
+            <ul>
+              <li data-i18n="yoga.1">Sekcje: O mnie, Joga, Realizacje, Poezja, Kontakt</li>
+              <li data-i18n="yoga.2">Własny slider zdjęć i karuzela z kropkami nawigacji</li>
+              <li data-i18n="yoga.3">Teksty wczytywane z Arkuszy Google</li>
+            </ul>
+            <p class="links">
+              <a class="btn btn--small" href="https://ragna9683.github.io/joga-websait/" target="_blank" rel="noopener" data-i18n="btn.live">Zobacz online</a>
+              <a class="btn btn--small btn--ghost" href="https://github.com/Ragna9683/joga-websait" target="_blank" rel="noopener" data-i18n="btn.code">Kod</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="thumb thumb--barber" aria-hidden="true"><span>Black Razor</span></div>
+          <div class="project__body">
+            <h3>Barbershop</h3>
+            <p class="chips"><span class="chip chip--note" data-i18n="badge.concept">Projekt koncepcyjny</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></p>
+            <ul>
+              <li data-i18n="barber.1">Ciemny motyw ze złotymi akcentami, cennik, zespół, galeria</li>
+              <li data-i18n="barber.2">Menu mobilne i animacje przy przewijaniu</li>
+              <li data-i18n="common.theme">Tryb jasny i ciemny</li>
+            </ul>
+            <p class="links">
+              <a class="btn btn--small" href="https://ragna9683.github.io/black-razor-barbershop/" target="_blank" rel="noopener" data-i18n="btn.live">Zobacz online</a>
+              <a class="btn btn--small btn--ghost" href="https://github.com/Ragna9683/black-razor-barbershop" target="_blank" rel="noopener" data-i18n="btn.code">Kod</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="thumb thumb--pilates" aria-hidden="true"><span>Studio Wdech</span></div>
+          <div class="project__body">
+            <h3 data-i18n="pilates.title">Studio pilatesu</h3>
+            <p class="chips"><span class="chip chip--note" data-i18n="badge.concept">Projekt koncepcyjny</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></p>
+            <ul>
+              <li data-i18n="pilates.1">Interaktywny grafik zajęć z zakładkami dni</li>
+              <li data-i18n="pilates.2">Karnety, pytania i odpowiedzi, formularz z wyborem zajęć</li>
+              <li data-i18n="common.theme">Tryb jasny i ciemny</li>
+            </ul>
+            <p class="links">
+              <a class="btn btn--small" href="https://ragna9683.github.io/studio-wdech-pilates/" target="_blank" rel="noopener" data-i18n="btn.live">Zobacz online</a>
+              <a class="btn btn--small btn--ghost" href="https://github.com/Ragna9683/studio-wdech-pilates" target="_blank" rel="noopener" data-i18n="btn.code">Kod</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="thumb thumb--food" aria-hidden="true"><span>Delivery</span></div>
+          <div class="project__body">
+            <h3 data-i18n="food.title">Aplikacja z dostawą jedzenia</h3>
+            <p class="chips"><span class="chip chip--note" data-i18n="badge.training">Projekt szkoleniowy</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></p>
+            <ul>
+              <li data-i18n="food.1">Lista restauracji generowana dynamicznie</li>
+              <li data-i18n="food.2">Koszyk w oknie modalnym</li>
+              <li data-i18n="food.3">Stan ładowania danych</li>
+            </ul>
+            <p class="links">
+              <a class="btn btn--small" href="https://ragna9683.github.io/delivery-food/" target="_blank" rel="noopener" data-i18n="btn.live">Zobacz online</a>
+              <a class="btn btn--small btn--ghost" href="https://github.com/Ragna9683/delivery-food" target="_blank" rel="noopener" data-i18n="btn.code">Kod</a>
+            </p>
+          </div>
+        </article>
+
+      </div>
+      <p class="note" data-i18n="projects.note">Projekty koncepcyjne to wzory dla przykładowych firm: nazwy, ceny i dane kontaktowe są fikcyjne.</p>
+    </div>
+  </section>
+
+  <section id="technologie">
+    <div class="wrap rv">
+      <h2 data-i18n="tech.title">Technologie</h2>
+      <p class="chips chips--big">
+        <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript (ES6+)</span>
+        <span class="chip">Fetch API</span><span class="chip" data-i18n="tech.react">React (projekty własne)</span><span class="chip" data-i18n="tech.angular">Angular (projekty własne)</span>
+        <span class="chip">Figma</span><span class="chip">Git i GitHub</span>
+      </p>
+      <p class="note" data-i18n="tech.note">Pracuję z narzędziami AI, które przyspieszają pracę, ale rozumiem kod, który oddaję.</p>
+    </div>
+  </section>
+
+  <section id="wspolpraca">
+    <div class="wrap rv">
+      <h2 data-i18n="process.title">Jak wygląda współpraca</h2>
+      <ol class="steps">
+        <li data-i18n="process.1">Rozmawiamy: co ma być na stronie, jakie macie zdjęcia i teksty.</li>
+        <li data-i18n="process.2">Ustalamy zakres i cenę z góry, bez niespodzianek.</li>
+        <li data-i18n="process.3">Robię stronę i pokazuję ją do obejrzenia.</li>
+        <li data-i18n="process.4">Wprowadzam poprawki i publikuję stronę online.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap rv">
+      <h2 data-i18n="nav.contact">Kontakt</h2>
+      <p data-i18n="contact.text">Napisz, opisz krótko swoją firmę, a wrócę z propozycją.</p>
+      <a class="btn" href="mailto:gysigeim15@gmail.com">gysigeim15@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="year">2026</span> Yaroslav · <span data-i18n="footer.text">Strony internetowe dla małych firm</span></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
