@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Hair Salon Wiśniewski · Demo</title>
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<div id="wisniewski-visual" data-view="desktop">
+  <div class="review" lang="ru">
+    <strong>Демо Wiśniewski</strong>
+    <div class="devices" role="group" aria-label="Размер экрана">
+      <button class="cursor-interaction" type="button" data-view-choice="desktop" aria-pressed="true">Компьютер</button>
+      <button class="cursor-interaction" type="button" data-view-choice="phone" aria-pressed="false">Телефон</button>
+    </div>
+  </div>
+  <div class="page" lang="pl">
+    <header class="masthead">
+      <button class="brand cursor-interaction" type="button" data-jump="hero" aria-label="Hair Salon Wiśniewski, początek strony">
+        <b>WIŚNIEWSKI</b><small>HAIR SALON</small>
+      </button>
+      <nav class="nav" id="wisniewski-preview-nav" aria-label="Menu salonu">
+        <button class="cursor-interaction" type="button" data-jump="offer">Oferta</button>
+        <button class="cursor-interaction" type="button" data-jump="portfolio">Portfolio</button>
+        <button class="cursor-interaction" type="button" data-jump="team">Zespół</button>
+        <button class="cursor-interaction" type="button" data-detail="salon">Salon</button>
+        <button class="cursor-interaction" type="button" data-detail="prices">Cennik</button>
+      </nav>
+      <button class="primary cursor-interaction" type="button" data-detail="booking">Umów wizytę <span aria-hidden="true">↗</span></button>
+      <button class="mobile-menu cursor-interaction" type="button" aria-controls="wisniewski-preview-nav" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button>
+    </header>
+    <main>
+      <section class="hero" data-section="hero" aria-labelledby="wisniewski-preview-title">
+        <video muted loop playsinline preload="metadata" poster="assets/hero-poster.webp" src="assets/hero.mp4" aria-hidden="true"></video>
+        <div class="hero-copy">
+          <div class="eyebrow">Fryzjer Warszawa · Wola</div>
+          <h1 id="wisniewski-preview-title">Twój styl.<br><em>Nasza sztuka.</em></h1>
+          <p class="offer-line">Strzyżenie, koloryzacja i stylizacja włosów.</p>
+          <div class="hero-actions">
+            <button class="primary cursor-interaction" type="button" data-detail="booking">Umów wizytę <span aria-hidden="true">↗</span></button>
+            <button class="hero-secondary cursor-interaction" type="button" data-jump="offer">Zobacz ofertę <span aria-hidden="true">↓</span></button>
+          </div>
+        </div>
+        <button class="video-toggle cursor-interaction" type="button">Odtwórz film</button>
+      </section>
+      <section class="collection" data-section="offer" aria-labelledby="wisniewski-preview-offer">
+        <div class="collection-head">
+          <div><div class="eyebrow">Oferta</div><h2 id="wisniewski-preview-offer">Wybierz swój styl.</h2></div>
+          <div class="place">Łucka 18, lok. 6<br>Warszawa · Wola</div>
+        </div>
+        <div class="collage">
+          <button class="tile women cursor-interaction" type="button" data-detail="women">
+            <img src="assets/kobiety.webp" width="650" height="600" alt="" data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/inspiration/9c5c7fb1158548d288a708cf34f2a0-hair-salon-wisniewski-inspiration-99a5cf798dc7434b85ce22e9129614-booksy.jpeg" decoding="async">
+            <span class="tile-copy"><span><b>Kobiety</b><small>Strzyżenie i kolor</small></span><span class="arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="tile men cursor-interaction" type="button" data-detail="men">
+            <img src="assets/mezczyzni.webp" width="640" height="385" alt="" data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/biz_photo/1400ff0a72c94ad3bb561e61f7f10e-hair-salon-wisniewski-biz-photo-0ef24cf234964ff898cb2b16d89741-booksy.jpeg?size=640x0" decoding="async">
+            <span class="tile-copy"><span><b>Mężczyźni</b><small>Cięcie i stylizacja</small></span><span class="arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="tile salon cursor-interaction" type="button" data-detail="salon">
+            <img src="assets/salon.webp" width="640" height="424" alt="" data-booksy-source="https://d375139ucebi94.cloudfront.net/pl/images/9509/biz_photo_154012929769.jpeg?size=640x0" decoding="async">
+            <span class="tile-copy"><span><b>Salon</b><small>Warszawa, Wola</small></span><span class="arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="tile prices cursor-interaction" type="button" data-detail="prices">
+            <span class="tile-copy"><span><b>Cennik</b><small>Aktualne ceny w Booksy</small></span><span class="arrow" aria-hidden="true">↗</span></span>
+          </button>
+        </div>
+      </section>
+      <section class="portfolio-pane" id="portfolio" data-section="portfolio" aria-labelledby="w-portfolio-title">
+        <div class="folio-layout">
+          <div class="folio-heading"><h2 id="w-portfolio-title">Nasze <em>prace.</em></h2></div>
+          <div class="folio-choices" role="group" aria-label="Wybierz pracę do obejrzenia">
+            <button class="folio-choice" type="button" aria-pressed="true" aria-controls="w-work-stage" data-title="Kasztanowe fale" data-alt="Długie, kasztanowe włosy z falami opadającymi na ramiona." data-position="50% 38%" data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/inspiration/85472677efe44a7c9c3b1d41c541f5-hair-salon-wisniewski-inspiration-4f7ab32a1f454a0eb7ebfb69f30ef4-booksy.jpeg"><img loading="lazy" decoding="async" src="assets/kasztanowe-fale-mini.webp" width="120" height="120" alt=""><span>Kasztanowe fale</span><span class="choice-mark" aria-hidden="true"></span></button>
+            <button class="folio-choice" type="button" aria-pressed="false" aria-controls="w-work-stage" data-title="Chłodny blond" data-alt="Jasne, chłodne pasma i luźne fale widziane od tyłu." data-position="50% 43%" data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/inspiration/5db2b51dccb14725a8cf2a5909945c-hair-salon-wisniewski-inspiration-719fb1d20bcc4475be6bc6dd5e350c-booksy.jpeg?size=640x0" data-full="assets/chlodny-blond.webp"><img loading="lazy" decoding="async" src="assets/chlodny-blond-mini.webp" width="120" height="120" alt=""><span>Chłodny blond</span><span class="choice-mark" aria-hidden="true"></span></button>
+            <button class="folio-choice" type="button" aria-pressed="false" aria-controls="w-work-stage" data-title="Klasyczny przedziałek" data-alt="Krótkie boki i gładko zaczesana góra z bocznym przedziałkiem." data-position="51% 32%" data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/inspiration/4dd762f20f9c4acfa4f4d54b11d68c-hair-salon-wisniewski-inspiration-6ecb9a110e944d9681a055b02fa39a-booksy.jpeg?size=640x0" data-full="assets/klasyczny-przedzialek.webp"><img loading="lazy" decoding="async" src="assets/klasyczny-przedzialek-mini.webp" width="120" height="120" alt=""><span>Klasyczny przedziałek</span><span class="choice-mark" aria-hidden="true"></span></button>
+            <button class="folio-choice" type="button" aria-pressed="false" aria-controls="w-work-stage" data-title="Warstwy i objętość" data-alt="Krótsze blond włosy z wywiniętymi końcówkami, widok z boku." data-position="50% 44%" data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/inspiration/cef48ce477c04e1699dff93cf24795-hair-salon-wisniewski-inspiration-c5255d3fc0f542e9962906695296ba-booksy.jpeg?size=640x0" data-full="assets/warstwy-i-objetosc.webp"><img loading="lazy" decoding="async" src="assets/warstwy-i-objetosc-mini.webp" width="120" height="120" alt=""><span>Warstwy i objętość</span><span class="choice-mark" aria-hidden="true"></span></button>
+          </div>
+          <figure class="folio-stage" id="w-work-stage">
+            <button class="folio-open" type="button" aria-haspopup="dialog" aria-controls="w-work-viewer" aria-label="Powiększ zdjęcie: Kasztanowe fale">
+              <img src="assets/kasztanowe-fale.webp" width="1020" height="1360" alt="Długie, kasztanowe włosy z falami opadającymi na ramiona." data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/inspiration/85472677efe44a7c9c3b1d41c541f5-hair-salon-wisniewski-inspiration-4f7ab32a1f454a0eb7ebfb69f30ef4-booksy.jpeg" loading="lazy" decoding="async" style="object-position:50% 38%">
+              <span class="zoom-label">Powiększ zdjęcie <span aria-hidden="true">+</span></span>
+            </button>
+          </figure>
+          <a class="folio-source" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa" target="_blank" rel="noopener noreferrer">Więcej prac w Booksy <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+      <section class="team-pane" id="zespol" data-section="team" aria-labelledby="w-team-title">
+        <div class="team-copy">
+          <h2 id="w-team-title">Poznaj <em>zespół.</em></h2>
+          <ul class="team-list">
+            <li>Barber Wladyslaw</li>
+            <li>Maria, Michal, Marlena i Natalia<small>Wspólny profil w Booksy</small></li>
+            <li>Michal Wiśniewski</li>
+          </ul>
+          <div class="team-actions">
+            <a class="primary" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa" target="_blank" rel="noopener noreferrer">Umów wizytę w Booksy <span aria-hidden="true">↗</span></a>
+            <a class="team-score" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa#business-reviews" target="_blank" rel="noopener noreferrer" aria-label="Ocena 4,8 na 5 na podstawie 620 opinii w Booksy" title="Ocena w Booksy z 25.11.2026">4,8/5 · 620 opinii</a>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/stanowiska-salonu.webp" width="640" height="424" alt="Stanowiska fryzjerskie z lustrami przy oknach salonu na Woli." data-booksy-source="https://d375139ucebi94.cloudfront.net/pl/images/9509/biz_photo_154012936578.jpeg?size=640x0" loading="lazy" decoding="async">
+          <figcaption>Łucka 18, lokal 6 · Warszawa, Wola</figcaption>
+        </figure>
+      </section>
+    </main>
+    <footer class="footer"><span>Hair Salon Wiśniewski · Łucka 18, lok. 6</span><button class="cursor-interaction" type="button" data-detail="booking">Rezerwacja w Booksy ↗</button></footer>
+    <dialog aria-labelledby="wisniewski-detail-heading">
+      <div class="dialog-top"><div><div class="eyebrow" data-dialog-kicker></div><h2 id="wisniewski-detail-heading"></h2></div><button class="dialog-close cursor-interaction" type="button" aria-label="Zamknij">×</button></div>
+      <img data-dialog-image width="560" height="315" alt="" hidden>
+      <p data-dialog-copy></p>
+      <ul data-dialog-list hidden></ul>
+      <a class="primary cursor-interaction" data-dialog-link href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa" target="_blank" rel="noopener noreferrer"><span data-dialog-cta></span><span aria-hidden="true">↗</span></a>
+    </dialog>
+    <dialog class="work-viewer" id="w-work-viewer" aria-labelledby="w-viewer-title">
+      <div class="viewer-inner">
+        <div class="viewer-top">
+          <h2 id="w-viewer-title"></h2>
+          <button class="viewer-close" type="button" aria-label="Zamknij podgląd" autofocus>×</button>
+        </div>
+        <img data-viewer-image width="1000" height="1200" alt="">
+        <div class="viewer-foot">
+          <button type="button" data-step="-1" aria-label="Poprzednia praca"><span aria-hidden="true">←</span> Poprzednia</button>
+          <span class="viewer-counter" aria-live="polite" aria-atomic="true"></span>
+          <button type="button" data-step="1" aria-label="Następna praca">Następna <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </dialog>
+  </div>
+</div>
+
+</body>
+</html>
