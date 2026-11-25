@@ -2,10 +2,11 @@
   const root = document.getElementById("wisniewski-visual");
   if (!root) return;
   const dialog = root.querySelector('dialog[aria-labelledby="wisniewski-detail-heading"]');
+  const header = root.querySelector(".masthead");
   const nav = root.querySelector(".nav");
-  const menu = root.querySelector(".mobile-menu");
+  const menu = root.querySelector(".nav-toggle");
+  const menuLabel = menu.querySelector(".menu-label");
   const player = root.querySelector("video");
-  const playback = root.querySelector(".video-toggle");
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const bookingUrl = "https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa";
   const details = {
@@ -13,12 +14,17 @@
     women: { kicker: "Oferta", title: "Kobiety", copy: "Usługi damskie w salonie na Woli.", list: ["Strzyżenie damskie", "Koloryzacja i refleksy", "Modelowanie i pielęgnacja"], button: "Zobacz usługi w Booksy" },
     men: { kicker: "Oferta", title: "Mężczyźni", copy: "Strzyżenie i modelowanie włosów oraz usługi dla brody.", list: ["Strzyżenie krótkich włosów z myciem i stylizacją", "Strzyżenie maszynką", "Strzyżenie z brodą"], button: "Zobacz usługi w Booksy" },
     prices: { kicker: "Booksy", title: "Cennik usług", copy: "Aktualne ceny i czas trwania poszczególnych usług znajdziesz na profilu salonu.", button: "Otwórz cennik w Booksy" },
-    salon: { kicker: "Warszawa · Wola", title: "Nasz salon", copy: "Hair Salon Wiśniewski, Łucka 18, lokal 6, 00-845 Warszawa.", button: "Zobacz adres w Booksy", photo: ".salon img" }
+    salon: {
+      kicker: "Warszawa · Wola", title: "Nasz salon",
+      copy: "Hair Salon Wiśniewski, Łucka 18, lokal 6, 00-845 Warszawa.", button: "Zobacz adres w Booksy",
+      photo: { src: "assets/stanowiska-salonu.webp", alt: "Stanowiska fryzjerskie przy oknach salonu na Woli." }
+    }
   };
   function setMenu(open) {
     nav.classList.toggle("is-open", open);
+    nav.inert = !open;
     menu.setAttribute("aria-expanded", String(open));
-    menu.firstChild.textContent = open ? "Zamknij " : "Menu ";
+    menuLabel.textContent = open ? "Zamknij" : "Menu";
   }
   function showDetail(key) {
     const detail = details[key];
@@ -30,7 +36,10 @@
     dialog.querySelector("[data-dialog-link]").href = bookingUrl;
     const photo = dialog.querySelector("[data-dialog-image]");
     photo.hidden = !detail.photo;
-    if (detail.photo) photo.src = root.querySelector(detail.photo).src;
+    if (detail.photo) {
+      photo.src = detail.photo.src;
+      photo.alt = detail.photo.alt;
+    }
     const list = dialog.querySelector("[data-dialog-list]");
     list.replaceChildren(...(detail.list || []).map(value => {
       const item = document.createElement("li");
@@ -38,41 +47,45 @@
       return item;
     }));
     list.hidden = !detail.list;
-    setMenu(false);
     if (!dialog.open) dialog.showModal();
   }
-  function syncVideoButton() {
-    playback.textContent = player.paused ? "Odtwórz film" : "Pauza";
+  function syncHeroMotion() {
+    if (reducedMotion.matches) {
+      player.pause();
+      return;
+    }
+    player.play().catch(() => { /* The poster is already visible if autoplay is unavailable. */ });
   }
+  menu.addEventListener("click", () => setMenu(nav.inert));
+  document.addEventListener("pointerdown", event => {
+    if (!nav.inert && !header.contains(event.target)) setMenu(false);
+  });
+  header.addEventListener("focusout", event => {
+    if (!nav.inert && event.relatedTarget && !header.contains(event.relatedTarget)) setMenu(false);
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !nav.inert) {
+      event.preventDefault();
+      menu.focus();
+      setMenu(false);
+    }
+  });
   root.addEventListener("click", event => {
+    if (!nav.inert && event.target.closest('a[href^="#"]')) setMenu(false);
     const control = event.target.closest("button");
     if (!control || !root.contains(control)) return;
-    if (control.dataset.viewChoice) {
-      root.dataset.view = control.dataset.viewChoice;
-      root.querySelectorAll("[data-view-choice]").forEach(option => option.setAttribute("aria-pressed", String(option === control)));
+    if (control.dataset.detail) {
+      if (nav.contains(control)) menu.focus({ preventScroll: true });
       setMenu(false);
-    } else if (control.dataset.jump) {
-      setMenu(false);
-      root.querySelector('[data-section="' + control.dataset.jump + '"]').scrollIntoView({ behavior: reducedMotion.matches ? "instant" : "smooth", block: "start" });
-    } else if (control.dataset.detail) {
       showDetail(control.dataset.detail);
-    } else if (control === menu) {
-      setMenu(menu.getAttribute("aria-expanded") !== "true");
-    } else if (control === playback) {
-      if (player.paused) player.play().catch(syncVideoButton); else player.pause();
+    } else if (control.dataset.catalogue) {
+      document.getElementById(control.dataset.catalogue).showModal();
     } else if (control.classList.contains("dialog-close")) {
       dialog.close();
     }
   });
-  root.addEventListener("keydown", event => {
-    if (event.key === "Escape" && menu.getAttribute("aria-expanded") === "true") {
-      setMenu(false);
-      menu.focus();
-    }
-  });
-  player.addEventListener("play", syncVideoButton);
-  player.addEventListener("pause", syncVideoButton);
-  if (!reducedMotion.matches) player.play().catch(syncVideoButton);
+  reducedMotion.addEventListener("change", syncHeroMotion);
+  syncHeroMotion();
 })();
 
 (() => {

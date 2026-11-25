@@ -4,33 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Hair Salon Wiśniewski · Demo</title>
-<link rel="stylesheet" href="styles.css">
-<script src="site.js" defer></script>
+<title>Hair Salon Wiśniewski · Warszawa Wola</title>
+<link rel="stylesheet" href="styles.css?v=35ae3cbed1">
+<script src="site.js?v=b9263a4f2c" defer></script>
 </head>
 <body>
-<div id="wisniewski-visual" data-view="desktop">
-  <div class="review" lang="ru">
-    <strong>Демо Wiśniewski</strong>
-    <div class="devices" role="group" aria-label="Размер экрана">
-      <button class="cursor-interaction" type="button" data-view-choice="desktop" aria-pressed="true">Компьютер</button>
-      <button class="cursor-interaction" type="button" data-view-choice="phone" aria-pressed="false">Телефон</button>
-    </div>
-  </div>
-  <div class="page" lang="pl">
-    <header class="masthead">
-      <button class="brand cursor-interaction" type="button" data-jump="hero" aria-label="Hair Salon Wiśniewski, początek strony">
+<div id="wisniewski-visual">
+  <div class="page">
+    <header class="masthead" id="poczatek">
+      <a class="brand" href="#poczatek" aria-label="Hair Salon Wiśniewski, początek strony">
         <b>WIŚNIEWSKI</b><small>HAIR SALON</small>
-      </button>
-      <nav class="nav" id="wisniewski-preview-nav" aria-label="Menu salonu">
-        <button class="cursor-interaction" type="button" data-jump="offer">Oferta</button>
-        <button class="cursor-interaction" type="button" data-jump="portfolio">Portfolio</button>
-        <button class="cursor-interaction" type="button" data-jump="team">Zespół</button>
-        <button class="cursor-interaction" type="button" data-detail="salon">Salon</button>
-        <button class="cursor-interaction" type="button" data-detail="prices">Cennik</button>
+      </a>
+      <div class="header-actions">
+        <button class="primary header-booking" type="button" data-detail="booking">Umów wizytę <span aria-hidden="true">↗</span></button>
+        <button class="nav-toggle" type="button" aria-controls="salon-nav" aria-expanded="false">
+          <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="menu-label">Menu</span>
+        </button>
+      </div>
+      <nav class="nav" id="salon-nav" aria-label="Nawigacja salonu" inert>
+        <a href="#oferta">Oferta</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#zespol">Zespół</a>
+        <button type="button" data-detail="salon">Salon</button>
+        <button type="button" data-detail="prices">Cennik</button>
+        <button class="nav-booking" type="button" data-detail="booking">Umów wizytę <span aria-hidden="true">↗</span></button>
       </nav>
-      <button class="primary cursor-interaction" type="button" data-detail="booking">Umów wizytę <span aria-hidden="true">↗</span></button>
-      <button class="mobile-menu cursor-interaction" type="button" aria-controls="wisniewski-preview-nav" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button>
     </header>
     <main>
       <section class="hero" data-section="hero" aria-labelledby="wisniewski-preview-title">
@@ -41,12 +40,11 @@
           <p class="offer-line">Strzyżenie, koloryzacja i stylizacja włosów.</p>
           <div class="hero-actions">
             <button class="primary cursor-interaction" type="button" data-detail="booking">Umów wizytę <span aria-hidden="true">↗</span></button>
-            <button class="hero-secondary cursor-interaction" type="button" data-jump="offer">Zobacz ofertę <span aria-hidden="true">↓</span></button>
+            <a class="hero-secondary" href="#oferta">Zobacz ofertę <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <button class="video-toggle cursor-interaction" type="button">Odtwórz film</button>
       </section>
-      <section class="collection" data-section="offer" aria-labelledby="wisniewski-preview-offer">
+      <section class="collection" id="oferta" tabindex="-1" data-section="offer" aria-labelledby="wisniewski-preview-offer">
         <div class="collection-head">
           <div><div class="eyebrow">Oferta</div><h2 id="wisniewski-preview-offer">Wybierz swój styl.</h2></div>
           <div class="place">Łucka 18, lok. 6<br>Warszawa · Wola</div>
@@ -69,7 +67,7 @@
           </button>
         </div>
       </section>
-      <section class="portfolio-pane" id="portfolio" data-section="portfolio" aria-labelledby="w-portfolio-title">
+      <section class="portfolio-pane" id="portfolio" tabindex="-1" data-section="portfolio" aria-labelledby="w-portfolio-title">
         <div class="folio-layout">
           <div class="folio-heading"><h2 id="w-portfolio-title">Nasze <em>prace.</em></h2></div>
           <div class="folio-choices" role="group" aria-label="Wybierz pracę do obejrzenia">
@@ -87,23 +85,46 @@
           <a class="folio-source" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa" target="_blank" rel="noopener noreferrer">Więcej prac w Booksy <span aria-hidden="true">↗</span></a>
         </div>
       </section>
-      <section class="team-pane" id="zespol" data-section="team" aria-labelledby="w-team-title">
-        <div class="team-copy">
-          <h2 id="w-team-title">Poznaj <em>zespół.</em></h2>
-          <ul class="team-list">
-            <li>Barber Wladyslaw</li>
-            <li>Maria, Michal, Marlena i Natalia<small>Wspólny profil w Booksy</small></li>
-            <li>Michal Wiśniewski</li>
-          </ul>
-          <div class="team-actions">
-            <a class="primary" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa" target="_blank" rel="noopener noreferrer">Umów wizytę w Booksy <span aria-hidden="true">↗</span></a>
-            <a class="team-score" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa#business-reviews" target="_blank" rel="noopener noreferrer" aria-label="Ocena 4,8 na 5 na podstawie 620 opinii w Booksy" title="Ocena w Booksy z 25.11.2026">4,8/5 · 620 opinii</a>
-          </div>
+      <section class="team-pane" id="zespol" tabindex="-1" data-section="team" aria-labelledby="w-team-title">
+        <h2 id="w-team-title">Poznaj <em>zespół.</em></h2>
+        <div class="team-grid">
+          <article class="staff-card" aria-labelledby="staff-wladyslaw">
+            <div class="staff-intro">
+              <img src="assets/profil-wladyslaw.webp" width="400" height="400" loading="lazy" decoding="async" alt="" data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/resource_photos/2ca0b766ca7b493b9a315c6412e13da2.jpeg">
+              <div><p class="staff-role">Master · Fryzjer męski</p><h3 id="staff-wladyslaw">Barber Wladyslaw</h3></div>
+            </div>
+            <p class="staff-summary">Strzyżenia męskie i dziecięce, praca nożyczkami i maszynką, strzyżenie brody oraz wizyty z dojazdem.</p>
+            <div class="staff-actions">
+              <button type="button" data-catalogue="uslugi-wladyslaw" aria-controls="uslugi-wladyslaw" aria-haspopup="dialog">Usługi (20)</button>
+              <a href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa/staffer/56622" target="_blank" rel="noopener noreferrer" aria-label="Barber Wladyslaw — profil w Booksy">Profil w Booksy <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="staff-card" aria-labelledby="staff-zespol">
+            <div class="staff-intro">
+              <img src="assets/profil-zespol.webp" width="400" height="400" loading="lazy" decoding="async" alt="" data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/resource_photos/0117d223612f46cea7f0fd0f91d21575.jpeg">
+              <div><p class="staff-role">Master · Fryzjer / stylista</p><h3 id="staff-zespol">Maria, Michal, Marlena i Natalia</h3></div>
+            </div>
+            <p class="staff-summary">Wspólny profil zespołu. Strzyżenia damskie i męskie, modelowanie, koloryzacja, refleksy i pielęgnacja włosów.</p>
+            <div class="staff-actions">
+              <button type="button" data-catalogue="uslugi-zespol" aria-controls="uslugi-zespol" aria-haspopup="dialog">Usługi (78)</button>
+              <a href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa/staffer/35547" target="_blank" rel="noopener noreferrer" aria-label="Maria, Michal, Marlena i Natalia — profil w Booksy">Profil w Booksy <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="staff-card" aria-labelledby="staff-michal">
+            <div class="staff-intro">
+              <img src="assets/profil-michal.webp" width="400" height="400" loading="lazy" decoding="async" alt="" data-booksy-source="https://d375139ucebi94.cloudfront.net/region2/pl/9509/resource_photos/81af38ed410d4173a7ac538041d24108.jpeg">
+              <div><p class="staff-role">Profil indywidualny</p><h3 id="staff-michal">Michal Wiśniewski</h3></div>
+            </div>
+            <p class="staff-summary">O dostępne usługi i terminy wizyt zapytaj bezpośrednio w salonie przy ul. Łuckiej 18.</p>
+            <div class="staff-actions">
+              <a href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa/staffer/29483" target="_blank" rel="noopener noreferrer" aria-label="Michal Wiśniewski — profil w Booksy">Profil w Booksy <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
-        <figure>
-          <img src="assets/stanowiska-salonu.webp" width="640" height="424" alt="Stanowiska fryzjerskie z lustrami przy oknach salonu na Woli." data-booksy-source="https://d375139ucebi94.cloudfront.net/pl/images/9509/biz_photo_154012936578.jpeg?size=640x0" loading="lazy" decoding="async">
-          <figcaption>Łucka 18, lokal 6 · Warszawa, Wola</figcaption>
-        </figure>
+        <div class="team-actions">
+          <a class="team-score" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa#business-reviews" target="_blank" rel="noopener noreferrer" aria-label="Ocena salonu 4,8 na 5 na podstawie 620 opinii w Booksy" title="Ocena salonu w Booksy z 25.11.2026">4,8/5 · 620 opinii o salonie</a>
+          <a class="primary" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa" target="_blank" rel="noopener noreferrer">Umów wizytę w Booksy <span aria-hidden="true">↗</span></a>
+        </div>
       </section>
     </main>
     <footer class="footer"><span>Hair Salon Wiśniewski · Łucka 18, lok. 6</span><button class="cursor-interaction" type="button" data-detail="booking">Rezerwacja w Booksy ↗</button></footer>
@@ -113,6 +134,198 @@
       <p data-dialog-copy></p>
       <ul data-dialog-list hidden></ul>
       <a class="primary cursor-interaction" data-dialog-link href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa" target="_blank" rel="noopener noreferrer"><span data-dialog-cta></span><span aria-hidden="true">↗</span></a>
+    </dialog>
+    <dialog class="staff-dialog" id="uslugi-wladyslaw" aria-labelledby="uslugi-wladyslaw-title">
+      <div class="staff-dialog-head">
+        <div><div class="eyebrow">Usługi</div><h2 id="uslugi-wladyslaw-title">Barber Wladyslaw</h2></div>
+        <form method="dialog"><button aria-label="Zamknij listę usług" autofocus>×</button></form>
+      </div>
+      <div class="staff-catalogue">
+        <details name="grupy-wladyslaw">
+          <summary>Strzyżenia męskie (11)</summary>
+          <ul>
+            <li><span>Depilacja nosa i uszu</span><span class="service-rate">30 zł<small>20 min</small></span></li>
+            <li><span>Strzyżenie dziecka do 6 lat</span><span class="service-rate">70 zł<small>35 min</small></span></li>
+            <li><span>Cięcie maszynką na jedną długość</span><span class="service-rate">od 80 zł<small>35 min</small></span></li>
+            <li><span>Krótkie włosy z myciem i stylizacją</span><span class="service-rate">110 zł<small>50 min</small></span></li>
+            <li><span>Cięcie maszynką i strzyżenie brody</span><span class="service-rate">120 zł<small>40 min</small></span></li>
+            <li><span>Klasyczne cięcie nożyczkami z myciem</span><span class="service-rate">120 zł<small>40 min</small></span></li>
+            <li><span>Włosy średniej długości z myciem i stylizacją</span><span class="service-rate">160 zł<small>40 min</small></span></li>
+            <li><span>Strzyżenie z peelingiem Kérastase</span><span class="service-rate">160 zł<small>40 min</small></span></li>
+            <li><span>Strzyżenie włosów oraz brody</span><span class="service-rate">160 zł<small>1 godz. 15 min</small></span></li>
+            <li><span>Odsiwianie, strzyżenie i konsultacja dotycząca łysienia</span><span class="service-rate">280 zł<small>55 min</small></span></li>
+            <li><span>Cover lub American Crew</span><span class="service-rate">280 zł<small>1 godz. 15 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-wladyslaw">
+          <summary>Usługi barberskie i broda (5)</summary>
+          <ul>
+            <li><span>Maszynka na jedną długość</span><span class="service-rate">70 zł<small>35 min</small></span></li>
+            <li><span>Przycięcie brody</span><span class="service-rate">80 zł<small>30 min</small></span></li>
+            <li><span>Męskie strzyżenie</span><span class="service-rate">110 zł<small>50 min</small></span></li>
+            <li><span>Cięcie maszynką ze strzyżeniem brody</span><span class="service-rate">120 zł<small>45 min</small></span></li>
+            <li><span>Męskie cięcie włosów i brody</span><span class="service-rate">160 zł<small>1 godz. 10 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-wladyslaw">
+          <summary>Pielęgnacja (1)</summary>
+          <ul>
+            <li><span>Peeling dla mężczyzn</span><span class="service-rate">od 50 zł<small>15 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-wladyslaw">
+          <summary>Wizyty z dojazdem (3)</summary>
+          <ul>
+            <li><span>Dojazd do 10 km (dopłata)</span><span class="service-rate">50 zł<small>20 min</small></span></li>
+            <li><span>Dziecięce strzyżenie w domu</span><span class="service-rate">150 zł<small>30 min</small></span></li>
+            <li><span>Męskie strzyżenie w domu</span><span class="service-rate">od 200 zł<small>30 min</small></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="staff-dialog-foot">
+        <small>Cennik Booksy · 25.11.2026</small>
+        <a class="primary" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa/staffer/56622" target="_blank" rel="noopener noreferrer">Sprawdź terminy w Booksy <span aria-hidden="true">↗</span></a>
+      </div>
+    </dialog>
+    <dialog class="staff-dialog" id="uslugi-zespol" aria-labelledby="uslugi-zespol-title">
+      <div class="staff-dialog-head">
+        <div><div class="eyebrow">Usługi</div><h2 id="uslugi-zespol-title">Maria, Michal, Marlena i Natalia</h2></div>
+        <form method="dialog"><button aria-label="Zamknij listę usług" autofocus>×</button></form>
+      </div>
+      <div class="staff-catalogue">
+        <details name="grupy-zespol">
+          <summary>Strzyżenia męskie (10)</summary>
+          <ul>
+            <li><span>Strzyżenie dziecka do 6 lat</span><span class="service-rate">70 zł<small>35 min</small></span></li>
+            <li><span>Cięcie maszynką na jedną długość</span><span class="service-rate">od 80 zł<small>35 min</small></span></li>
+            <li><span>Krótkie włosy z myciem i stylizacją</span><span class="service-rate">110 zł<small>50 min</small></span></li>
+            <li><span>Cięcie maszynką i strzyżenie brody</span><span class="service-rate">120 zł<small>40 min</small></span></li>
+            <li><span>Klasyczne cięcie nożyczkami z myciem</span><span class="service-rate">120 zł<small>40 min</small></span></li>
+            <li><span>Włosy średniej długości z myciem i stylizacją</span><span class="service-rate">160 zł<small>40 min</small></span></li>
+            <li><span>Strzyżenie z peelingiem Kérastase</span><span class="service-rate">160 zł<small>40 min</small></span></li>
+            <li><span>Długie włosy z myciem i stylizacją</span><span class="service-rate">220 zł<small>40 min</small></span></li>
+            <li><span>Odsiwianie, strzyżenie i konsultacja dotycząca łysienia</span><span class="service-rate">280 zł<small>55 min</small></span></li>
+            <li><span>Cover lub American Crew</span><span class="service-rate">280 zł<small>1 godz. 15 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-zespol">
+          <summary>Usługi barberskie i broda (3)</summary>
+          <ul>
+            <li><span>Maszynka na jedną długość</span><span class="service-rate">70 zł<small>35 min</small></span></li>
+            <li><span>Męskie strzyżenie</span><span class="service-rate">110 zł<small>50 min</small></span></li>
+            <li><span>Cięcie maszynką ze strzyżeniem brody</span><span class="service-rate">120 zł<small>45 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-zespol">
+          <summary>Strzyżenia damskie (5)</summary>
+          <ul>
+            <li><span>Podcięcie grzywki</span><span class="service-rate">50 zł<small>10 min</small></span></li>
+            <li><span>Strzyżenie · włosy krótkie</span><span class="service-rate">120 zł<small>40 min</small></span></li>
+            <li><span>Strzyżenie · włosy średnie</span><span class="service-rate">160 zł<small>50 min</small></span></li>
+            <li><span>Strzyżenie · włosy długie</span><span class="service-rate">od 220 zł<small>50 min</small></span></li>
+            <li><span>Strzyżenie · włosy bardzo długie</span><span class="service-rate">280 zł<small>1 godz. 15 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-zespol">
+          <summary>Modelowanie (15)</summary>
+          <ul>
+            <li><span>Wygładzenie włosów urządzeniem SteamPod</span><span class="service-rate">od 30 zł<small>20 min</small></span></li>
+            <li><span>K Water – efekt gładkiej tafli</span><span class="service-rate">od 40 zł<small>20 min</small></span></li>
+            <li><span>Modelowanie · włosy krótkie</span><span class="service-rate">80 zł<small>45 min</small></span></li>
+            <li><span>Modelowanie z lokami · włosy krótkie</span><span class="service-rate">od 100 zł<small>45 min</small></span></li>
+            <li><span>Modelowanie · włosy średnie</span><span class="service-rate">150 zł<small>50 min</small></span></li>
+            <li><span>Modelowanie z lokami · włosy średnie</span><span class="service-rate">od 160 zł<small>50 min</small></span></li>
+            <li><span>Modelowanie po przedłużeniu · włosy średnie</span><span class="service-rate">170 zł<small>1 godz.</small></span></li>
+            <li><span>Modelowanie · włosy długie</span><span class="service-rate">200 zł<small>50 min</small></span></li>
+            <li><span>Modelowanie z lokami · włosy długie</span><span class="service-rate">od 220 zł<small>1 godz.</small></span></li>
+            <li><span>Modelowanie po przedłużeniu · włosy długie</span><span class="service-rate">od 230 zł<small>1 godz. 30 min</small></span></li>
+            <li><span>Loki i modelowanie po przedłużeniu · włosy długie</span><span class="service-rate">od 240 zł<small>1 godz.</small></span></li>
+            <li><span>Modelowanie · włosy bardzo długie</span><span class="service-rate">od 280 zł<small>1 godz. 10 min</small></span></li>
+            <li><span>Modelowanie z lokami · włosy bardzo długie</span><span class="service-rate">od 300 zł<small>1 godz. 20 min</small></span></li>
+            <li><span>Modelowanie po przedłużeniu · włosy bardzo długie</span><span class="service-rate">320 zł<small>1 godz.</small></span></li>
+            <li><span>Jeden kolor i strzyżenie · włosy bardzo długie</span><span class="service-rate">620 zł<small>3 godz. 30 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-zespol">
+          <summary>Koloryzacja i tonowanie (15)</summary>
+          <ul>
+            <li><span>Jeden kolor i strzyżenie · włosy krótkie</span><span class="service-rate">390 zł<small>2 godz. 20 min</small></span></li>
+            <li><span>Jeden kolor i strzyżenie · włosy średnie</span><span class="service-rate">490 zł<small>2 godz. 50 min</small></span></li>
+            <li><span>Jeden kolor i strzyżenie · włosy długie</span><span class="service-rate">590 zł<small>3 godz. 10 min</small></span></li>
+            <li><span>Sombre · włosy średnie</span><span class="service-rate">od 600 zł<small>3 godz. 25 min</small></span></li>
+            <li><span>Sombre · włosy długie</span><span class="service-rate">od 800 zł<small>4 godz.</small></span></li>
+            <li><span>AirTouch · włosy średnie</span><span class="service-rate">od 600 zł<small>3 godz. 25 min</small></span></li>
+            <li><span>AirTouch · włosy długie</span><span class="service-rate">od 900 zł<small>4 godz.</small></span></li>
+            <li><span>Tonowanie · włosy krótkie</span><span class="service-rate">240 zł<small>1 godz.</small></span></li>
+            <li><span>Tonowanie · włosy średnie</span><span class="service-rate">300 zł<small>1 godz. 15 min</small></span></li>
+            <li><span>Tonowanie · włosy długie</span><span class="service-rate">350 zł<small>1 godz. 30 min</small></span></li>
+            <li><span>Tonowanie · włosy bardzo długie</span><span class="service-rate">400 zł<small>1 godz. 40 min</small></span></li>
+            <li><span>Tonowanie ze strzyżeniem · włosy krótkie</span><span class="service-rate">400 zł<small>1 godz. 30 min</small></span></li>
+            <li><span>Tonowanie ze strzyżeniem · włosy średnie</span><span class="service-rate">450 zł<small>1 godz. 45 min</small></span></li>
+            <li><span>Tonowanie ze strzyżeniem · włosy długie</span><span class="service-rate">500 zł<small>1 godz. 50 min</small></span></li>
+            <li><span>Tonowanie ze strzyżeniem · włosy bardzo długie</span><span class="service-rate">550 zł<small>1 godz. 50 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-zespol">
+          <summary>Refleksy (4)</summary>
+          <ul>
+            <li><span>Kolor z refleksami, strzyżenie i pielęgnacja · włosy krótkie</span><span class="service-rate">650 zł<small>3 godz.</small></span></li>
+            <li><span>Kolor z refleksami, strzyżenie i pielęgnacja · włosy średnie</span><span class="service-rate">750 zł<small>3 godz. 30 min</small></span></li>
+            <li><span>Kolor z refleksami, strzyżenie i pielęgnacja · włosy długie</span><span class="service-rate">800 zł<small>3 godz. 45 min</small></span></li>
+            <li><span>Kolor z refleksami, strzyżenie i pielęgnacja · włosy bardzo długie</span><span class="service-rate">900 zł<small>4 godz.</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-zespol">
+          <summary>Balayage (4)</summary>
+          <ul>
+            <li><span>Balayage ze strzyżeniem i pielęgnacją · włosy krótkie</span><span class="service-rate">od 600 zł<small>2 godz.</small></span></li>
+            <li><span>Balayage ze strzyżeniem i pielęgnacją · włosy średnie</span><span class="service-rate">od 700 zł<small>3 godz.</small></span></li>
+            <li><span>Balayage ze strzyżeniem i pielęgnacją · włosy długie</span><span class="service-rate">800 zł<small>3 godz. 30 min</small></span></li>
+            <li><span>Balayage ze strzyżeniem i pielęgnacją · włosy bardzo długie</span><span class="service-rate">1 000 zł<small>4 godz.</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-zespol">
+          <summary>Dekoloryzacja (8)</summary>
+          <ul>
+            <li><span>Dekoloryzacja odrostu, kolor i strzyżenie · włosy krótkie</span><span class="service-rate">500 zł<small>3 godz.</small></span></li>
+            <li><span>Dekoloryzacja odrostu, kolor i strzyżenie · włosy średnie</span><span class="service-rate">600 zł<small>3 godz. 30 min</small></span></li>
+            <li><span>Dekoloryzacja odrostu, kolor i strzyżenie · włosy długie</span><span class="service-rate">700 zł<small>4 godz.</small></span></li>
+            <li><span>Dekoloryzacja odrostu, kolor i strzyżenie · włosy bardzo długie</span><span class="service-rate">od 800 zł<small>4 godz.</small></span></li>
+            <li><span>Pełna dekoloryzacja, kolor i strzyżenie · włosy krótkie</span><span class="service-rate">600 zł<small>3 godz.</small></span></li>
+            <li><span>Pełna dekoloryzacja, kolor i strzyżenie · włosy średnie</span><span class="service-rate">700 zł<small>4 godz. 30 min</small></span></li>
+            <li><span>Pełna dekoloryzacja, kolor i strzyżenie · włosy długie</span><span class="service-rate">800 zł<small>4 godz. 30 min</small></span></li>
+            <li><span>Pełna dekoloryzacja, kolor i strzyżenie · włosy bardzo długie</span><span class="service-rate">900 zł<small>5 godz. 30 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-zespol">
+          <summary>Pielęgnacja (9)</summary>
+          <ul>
+            <li><span>Peeling dla mężczyzn</span><span class="service-rate">od 50 zł<small>15 min</small></span></li>
+            <li><span>Peeling dla kobiet</span><span class="service-rate">od 60 zł<small>20 min</small></span></li>
+            <li><span>Wygładzenie z efektem prostowania keratynowego</span><span class="service-rate">od 40 zł<small>50 min</small></span></li>
+            <li><span>Metal Detox przy koloryzacji</span><span class="service-rate">od 70 zł<small>20 min</small></span></li>
+            <li><span>Kérastase – booster z ampułką</span><span class="service-rate">200 zł<small>50 min</small></span></li>
+            <li><span>Zabieg Kérastase Gloss Absolu</span><span class="service-rate">240 zł<small>50 min</small></span></li>
+            <li><span>Molekularna odbudowa włosów</span><span class="service-rate">290 zł<small>55 min</small></span></li>
+            <li><span>Kawiorowa pielęgnacja Chronologiste</span><span class="service-rate">od 300 zł<small>50 min</small></span></li>
+            <li><span>Zabieg Kérastase Première</span><span class="service-rate">320 zł<small>45 min</small></span></li>
+          </ul>
+        </details>
+        <details name="grupy-zespol">
+          <summary>Wizyty z dojazdem (5)</summary>
+          <ul>
+            <li><span>Dojazd do 10 km (dopłata)</span><span class="service-rate">50 zł<small>20 min</small></span></li>
+            <li><span>Dziecięce strzyżenie w domu</span><span class="service-rate">150 zł<small>30 min</small></span></li>
+            <li><span>Męskie strzyżenie w domu</span><span class="service-rate">od 200 zł<small>30 min</small></span></li>
+            <li><span>Modelowanie włosów w domu</span><span class="service-rate">od 300 zł<small>45 min</small></span></li>
+            <li><span>Damskie strzyżenie w domu</span><span class="service-rate">od 300 zł<small>1 godz.</small></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="staff-dialog-foot">
+        <small>Cennik Booksy · 25.11.2026</small>
+        <a class="primary" href="https://booksy.com/pl-pl/9509_hair-salon-wisniewski_fryzjer_3_warszawa/staffer/35547" target="_blank" rel="noopener noreferrer">Sprawdź terminy w Booksy <span aria-hidden="true">↗</span></a>
+      </div>
     </dialog>
     <dialog class="work-viewer" id="w-work-viewer" aria-labelledby="w-viewer-title">
       <div class="viewer-inner">
